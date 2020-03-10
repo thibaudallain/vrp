@@ -3,10 +3,11 @@ class PagesController < ApplicationController
 
   def home
     @players = Player.all
+    @season = Season.first
 
     respond_to do |format|
       format.html
-      format.csv { send_data @players.to_csv, filename: "players-#{Date.today}.csv" }
+      format.csv { send_data @season.to_csv, filename: "players-#{Date.today}.csv" }
     end
   end
 end

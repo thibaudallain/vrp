@@ -2,3 +2,9 @@
 <p>Find me in app/views/pages/home.html.erb</p>
 
 <%= link_to "Heeeeeeyyyyy", root_path(format: :csv) %>
+
+<% @players.each do |player| %>
+<div>
+  <%= "#{player.first_name} #{player.last_name} : #{player.selections.count}"%>
+</div>
+<% end %>
